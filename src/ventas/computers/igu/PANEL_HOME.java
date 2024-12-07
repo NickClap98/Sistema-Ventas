@@ -74,6 +74,8 @@ public class PANEL_HOME extends javax.swing.JFrame {
         btn_ok = new javax.swing.JButton();
         TXT_PAGO = new javax.swing.JTextField();
         jbl_productosAPrice1 = new javax.swing.JLabel();
+        jcb_online = new javax.swing.JCheckBox();
+        jbl_productosAPrice2 = new javax.swing.JLabel();
         EDITAR = new javax.swing.JFrame();
         jpanelEditar = new javax.swing.JPanel();
         txt_Editar_nombre = new javax.swing.JTextField();
@@ -310,7 +312,17 @@ public class PANEL_HOME extends javax.swing.JFrame {
 
     jbl_productosAPrice1.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
     jbl_productosAPrice1.setForeground(new java.awt.Color(0, 255, 0));
-    jbl_productosAPrice1.setText("PÁGO CON:");
+    jbl_productosAPrice1.setText("Pago online");
+
+    jcb_online.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jcb_onlineActionPerformed(evt);
+        }
+    });
+
+    jbl_productosAPrice2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+    jbl_productosAPrice2.setForeground(new java.awt.Color(0, 255, 0));
+    jbl_productosAPrice2.setText("PÁGO CON:");
 
     javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
     jPanel5.setLayout(jPanel5Layout);
@@ -318,49 +330,61 @@ public class PANEL_HOME extends javax.swing.JFrame {
         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel5Layout.createSequentialGroup()
             .addGap(18, 18, 18)
-            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                 .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 18, Short.MAX_VALUE))
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jbl_productosAPrice1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jcb_online))
+                .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(jbl_productosAPrice2)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                             .addComponent(btn_eliminarList, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                            .addComponent(jbl_productosAPrice1)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(TXT_PAGO, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jlb_productosA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbl_productosAPrice, javax.swing.GroupLayout.DEFAULT_SIZE, 177, Short.MAX_VALUE))))
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(jPanel5Layout.createSequentialGroup()
-                    .addComponent(btn_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(95, 95, 95)))
-            .addContainerGap(24, Short.MAX_VALUE))
+                            .addComponent(jbl_productosAPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+            .addContainerGap())
+        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btn_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+            .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(119, 119, 119))
     );
     jPanel5Layout.setVerticalGroup(
         jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(jPanel5Layout.createSequentialGroup()
             .addGap(20, 20, 20)
             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(btn_eliminarList, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel5Layout.createSequentialGroup()
                     .addComponent(jlb_productosA, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jbl_productosAPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addComponent(btn_eliminarList, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jbl_productosAPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(TXT_PAGO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbl_productosAPrice2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(TXT_PAGO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jcb_online, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(jbl_productosAPrice1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGap(18, 18, 18)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                 .addComponent(btn_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addComponent(btn_ok, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addContainerGap(21, Short.MAX_VALUE))
+            .addContainerGap())
     );
 
     javax.swing.GroupLayout COMPRASLayout = new javax.swing.GroupLayout(COMPRAS.getContentPane());
@@ -380,7 +404,6 @@ public class PANEL_HOME extends javax.swing.JFrame {
     );
 
     EDITAR.setUndecorated(true);
-    EDITAR.setPreferredSize(new java.awt.Dimension(433, 368));
     EDITAR.setResizable(false);
     EDITAR.setSize(new java.awt.Dimension(433, 398));
     EDITAR.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -1129,9 +1152,15 @@ public class PANEL_HOME extends javax.swing.JFrame {
          */
         try {
 
-            PagoFinal = Double.valueOf(TXT_PAGO.getText());
-
-            if (PrecioFinal < PagoFinal) {
+            
+if(jcb_online.isSelected() == true){
+                PagoFinal = PrecioFinal;
+                } else {
+    PagoFinal = Double.valueOf(TXT_PAGO.getText());
+}
+            if (jcb_online.isSelected()==true || PrecioFinal < PagoFinal ) {
+                
+                
                 Imprimir IMPRESION = new Imprimir();
                 IMPRESION.setVisible(true);
                 IMPRESION.setLocationRelativeTo(this);
@@ -1221,6 +1250,10 @@ public class PANEL_HOME extends javax.swing.JFrame {
 
     }//GEN-LAST:event_EDITARWindowClosed
 
+    private void jcb_onlineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcb_onlineActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcb_onlineActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1291,6 +1324,8 @@ public class PANEL_HOME extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel jbl_productosAPrice;
     private javax.swing.JLabel jbl_productosAPrice1;
+    private javax.swing.JLabel jbl_productosAPrice2;
+    private javax.swing.JCheckBox jcb_online;
     private javax.swing.JLabel jlb_Editar_categoria;
     private javax.swing.JLabel jlb_Editar_codigo;
     private javax.swing.JLabel jlb_Editar_nombre;
