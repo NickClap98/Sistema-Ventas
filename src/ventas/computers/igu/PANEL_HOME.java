@@ -1152,7 +1152,7 @@ public class PANEL_HOME extends javax.swing.JFrame {
          */
         try {
 
-            
+            //Comprobar si el jCheckBox esta activo sino que sea el pago manual
 if(jcb_online.isSelected() == true){
                 PagoFinal = PrecioFinal;
                 } else {
